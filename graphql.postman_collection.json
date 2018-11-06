@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "38bc45d0-0a14-402c-a001-e19149a17b7e",
-		"name": "graphql",
+		"_postman_id": "f47b061c-1056-40b0-ba6a-d74a817fc558",
+		"name": "graphql copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -28,6 +28,48 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\tallDictCollections(start: 0, end: 10) {\n\t\tdictCollectionId\n\t\tcollectionCode\n\t\tcollectionName\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/graphql/v2/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"graphql",
+						"v2",
+						"process"
+					]
+				},
+				"description": "get_dictcollections"
+			},
+			"response": []
+		},
+		{
+			"name": "get_dictcollections_and_items",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tallDictCollections(start: 0, end: 10) {\n\t\tdictCollectionId\n\t\tcollectionCode\n\t\tcollectionName\n\t}\n\tallDictItemsByDictCollectionId(dictCollectionId: 2, start: 0, end: 10) {\n\t\tdictItemId\n\t\tdictCollectionId\n\t\titemCode\n\t\titemName\n\t}\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/o/graphql/v2/process",
